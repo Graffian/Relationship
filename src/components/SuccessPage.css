@@ -311,12 +311,12 @@
 }
 
 .timeline-image img {
-  width: 100%;
-  height: 100%;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  margin: 0 8px 8px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .timeline-image:hover img {
@@ -514,4 +514,32 @@
   .timeline-gallery {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 600px) {
+  .timeline-images img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.timeline-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.timeline-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.timeline-images img:hover {
+  transform: scale(1.05);
 } 
