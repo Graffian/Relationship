@@ -90,7 +90,7 @@ const SuccessPage = () => {
         loop
         className="background-music"
         autoPlay
-        preload="auto"
+        preload="metadata"
       />
 
       <div className="countdown-section">
@@ -199,19 +199,27 @@ const SuccessPage = () => {
         <h2>Our Timeline</h2>
         <div className="timeline">
           <div className="timeline-item">
-            <div className="timeline-date">November 25, 2024</div>
+            <div className="timeline-date">First Date</div>
             <div className="timeline-content">
-              <h3>First Date</h3>
-              <div className="timeline-gallery">
-                <div className="timeline-image">
-                  <img src={firstDate1} alt="First Date" />
-                </div>
-                <div className="timeline-image">
-                  <img src={firstDate2} alt="First Date" />
-                </div>
-                <div className="timeline-image">
-                  <img src={firstDate3} alt="First Date" />
-                </div>
+              <div className="timeline-images">
+                <img 
+                  src={firstDate1} 
+                  alt="First Date" 
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img 
+                  src={firstDate2} 
+                  alt="First Date" 
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img 
+                  src={firstDate3} 
+                  alt="First Date" 
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
@@ -225,19 +233,27 @@ const SuccessPage = () => {
             </div>
           </div>
           <div className="timeline-item">
-            <div className="timeline-date">May 1-3, 2025</div>
+            <div className="timeline-date">First Big Event Together</div>
             <div className="timeline-content">
-              <h3>First Big Event Together</h3>
-              <div className="timeline-gallery">
-                <div className="timeline-image">
-                  <img src={bigEvent1} alt="Big Event" />
-                </div>
-                <div className="timeline-image">
-                  <img src={bigEvent2} alt="Big Event" />
-                </div>
-                <div className="timeline-image">
-                  <img src={bigEvent3} alt="Big Event" />
-                </div>
+              <div className="timeline-images">
+                <img 
+                  src={bigEvent1} 
+                  alt="Big Event" 
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img 
+                  src={bigEvent2} 
+                  alt="Big Event" 
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img 
+                  src={bigEvent3} 
+                  alt="Big Event" 
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>

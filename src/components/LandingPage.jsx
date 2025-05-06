@@ -39,6 +39,7 @@ const LandingPage = () => {
         src={meetMeHalfway}
         loop
         className="background-music"
+        preload="metadata"
       />
 
       <div className="audio-controls">
@@ -54,7 +55,13 @@ const LandingPage = () => {
 
       <div className="story-section">
         <div className="image-container">
-          <img src={love1} alt="Our Love Story" className="story-image" />
+          <img 
+            src={love1} 
+            alt="Our Love Story" 
+            className="story-image" 
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="text-content">
           <h2>From Friends to Forever</h2>
@@ -80,7 +87,13 @@ const LandingPage = () => {
           </p>
         </div>
         <div className="image-container">
-          <img src={love2} alt="Our Promise" className="story-image" />
+          <img 
+            src={love2} 
+            alt="Our Promise" 
+            className="story-image" 
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -95,13 +108,28 @@ const LandingPage = () => {
         <p className="gallery-note">my bad agar ye photos ache ni lage i swearr i improve everytime you shout at me before taking pics</p>
         <div className="gallery-grid">
           <div className="gallery-item">
-            <img src={love3} alt="Our Memories" />
+            <img 
+              src={love3} 
+              alt="Our Memories" 
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="gallery-item">
-            <img src={love4} alt="Our Memories" />
+            <img 
+              src={love4} 
+              alt="Our Memories" 
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="gallery-item">
-            <img src={love5} alt="Our Memories" />
+            <img 
+              src={love5} 
+              alt="Our Memories" 
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>

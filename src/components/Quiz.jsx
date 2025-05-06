@@ -118,6 +118,7 @@ const Quiz = () => {
         loop
         className="background-music"
         autoPlay
+        preload="metadata"
       />
 
       <h1 className="quiz-header">Our Special Quiz</h1>
@@ -148,7 +149,13 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src={themeImage} alt="Our Theme" className="quiz-image" />
+          <img 
+            src={themeImage} 
+            alt="Our Theme" 
+            className="quiz-image" 
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -172,7 +179,13 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src={dateImage} alt="Our First Date" className="quiz-image" />
+          <img 
+            src={dateImage} 
+            alt="Our First Date" 
+            className="quiz-image" 
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -196,7 +209,13 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src={foodImage} alt="Our Food Adventures" className="quiz-image" />
+          <img 
+            src={foodImage} 
+            alt="Our Food Adventures" 
+            className="quiz-image" 
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -218,7 +237,13 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src={skinImage} alt="Skin Color" className="quiz-image" />
+          <img 
+            src={skinImage} 
+            alt="Skin Color" 
+            className="quiz-image" 
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
