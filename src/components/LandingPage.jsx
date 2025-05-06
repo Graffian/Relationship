@@ -1,25 +1,24 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
 const LandingPage = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const navigate = useNavigate();
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(() => {
-    // Set the starting time to 43 seconds when component mounts
+  const handleQuizClick = () => {
     if (audioRef.current) {
-      audioRef.current.currentTime = 43;
+      audioRef.current.pause();
     }
-  }, []);
+    navigate('/quiz');
+  };
 
-  const togglePlay = () => {
+  const toggleMusic = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        // Ensure we start from 43 seconds when playing
         audioRef.current.currentTime = 43;
         audioRef.current.play();
       }
@@ -27,21 +26,18 @@ const LandingPage = () => {
     }
   };
 
-  const handleQuizClick = () => {
-    navigate('/quiz');
-  };
-
   return (
     <div className="landing-container">
+      <audio 
+        ref={audioRef}
+        src="/src/assets/meet-me-halfway.mp3"
+        loop
+        className="background-music"
+      />
+
       <div className="audio-controls">
-        <audio 
-          ref={audioRef}
-          src="/src/assets/meet-me-halfway.mp3"
-          loop
-          className="background-music"
-        />
-        <button onClick={togglePlay} className="music-button">
-          {isPlaying ? '🔊 Pause Music' : '🔈 Play Music'}
+        <button className="music-button" onClick={toggleMusic}>
+          {isPlaying ? 'Pause Music' : 'Play Music'}
         </button>
       </div>
 

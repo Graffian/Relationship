@@ -1,17 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
 .quiz-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   min-height: 100vh;
   background: linear-gradient(135deg, #ffd1dc 0%, #b0e0e6 100%);
+  animation: fadeIn 0.8s ease-in;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .quiz-header {
   text-align: center;
   color: #333;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.8s ease-out;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .quiz-card {
@@ -23,6 +52,37 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.quiz-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.quiz-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.quiz-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .question-section {
@@ -33,6 +93,14 @@
   color: #333;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  transition: color 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  font-family: 'Playfair Display', serif;
+}
+
+.quiz-card:hover .question-section h2 {
+  color: #ff69b4;
 }
 
 .quiz-select {
@@ -44,11 +112,22 @@
   margin-bottom: 1rem;
   background-color: white;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.quiz-select:hover {
+  border-color: #ff69b4;
+  transform: translateY(-2px);
 }
 
 .quiz-select:focus {
   outline: none;
   border-color: #b0e0e6;
+  box-shadow: 0 0 0 3px rgba(176, 224, 230, 0.3);
 }
 
 .selected-answer {
@@ -58,6 +137,17 @@
   margin-top: 1rem;
   color: #333;
   font-weight: 500;
+  animation: fadeIn 0.5s ease-out;
+  border-left: 4px solid #ff69b4;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.selected-answer:hover {
+  background-color: #fff;
+  transform: translateX(5px);
 }
 
 .image-section {
@@ -65,6 +155,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease;
 }
 
 .quiz-image {
@@ -72,6 +163,12 @@
   height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.quiz-card:hover .quiz-image {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .quiz-buttons {
@@ -79,6 +176,9 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+  animation: fadeIn 0.8s ease-out;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
 }
 
 .done-button, .reset-button {
@@ -87,7 +187,12 @@
   border-radius: 8px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .done-button {
@@ -101,8 +206,30 @@
 }
 
 .done-button:hover, .reset-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.done-button:active, .reset-button:active {
+  transform: translateY(-1px);
+}
+
+.done-button::after, .reset-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.done-button:hover::after, .reset-button:hover::after {
+  width: 300px;
+  height: 300px;
 }
 
 @media (max-width: 768px) {
@@ -117,4 +244,86 @@
   .quiz-image {
     max-width: 80%;
   }
+
+  .quiz-header {
+    font-size: 2rem;
+  }
+
+  .done-button, .reset-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.audio-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.music-button {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.music-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.music-button:active {
+  transform: translateY(0);
+}
+
+.quiz-message {
+  margin-top: 2rem;
+  padding: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 0.8s ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+.quiz-message p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.warning-message {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem auto;
+  max-width: 600px;
+  animation: shake 0.5s ease-in-out;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
 } 

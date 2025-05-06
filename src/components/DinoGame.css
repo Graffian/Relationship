@@ -1,0 +1,147 @@
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffd6e0, #ffb6c1);
+  padding: 20px;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-header h1 {
+  color: #ff4d6d;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-display {
+  font-size: 1.5rem;
+  color: #ff4d6d;
+  font-weight: bold;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.timer {
+  color: #ff4d6d;
+}
+
+.hearts-display {
+  color: #ff4d4d;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid #ff4d6d;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.2);
+}
+
+.dino {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: left 0.1s ease-out;
+  transform: scaleX(-1);
+  will-change: left;
+}
+
+.dino.jumping {
+  transform: translateY(-100px);
+}
+
+.obstacle {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: left 0.2s ease-out;
+}
+
+.heart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: float 1s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.start-screen,
+.game-over-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.3);
+}
+
+.start-screen h2,
+.game-over-screen h2 {
+  color: #ff4d6d;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.start-button,
+.restart-button {
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+.start-button:hover,
+.restart-button:hover {
+  background-color: #ff3357;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+}
+
+.game-over-screen p {
+  font-size: 1.3rem;
+  color: #ff4d6d;
+  margin-bottom: 20px;
+} 
