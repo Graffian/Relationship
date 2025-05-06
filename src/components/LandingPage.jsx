@@ -1,12 +1,53 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
 const LandingPage = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Set the starting time to 43 seconds when component mounts
+    if (audioRef.current) {
+      audioRef.current.currentTime = 43;
+    }
+  }, []);
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        // Ensure we start from 43 seconds when playing
+        audioRef.current.currentTime = 43;
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleQuizClick = () => {
+    navigate('/quiz');
+  };
+
   return (
     <div className="landing-container">
+      <div className="audio-controls">
+        <audio 
+          ref={audioRef}
+          src="/src/assets/meet-me-halfway.mp3"
+          loop
+          className="background-music"
+        />
+        <button onClick={togglePlay} className="music-button">
+          {isPlaying ? '🔊 Pause Music' : '🔈 Play Music'}
+        </button>
+      </div>
+
       <div className="hero-section">
-        <h1 className="main-title">Snehuzz & Niggi</h1>
-        <p className="subtitle">A Love Story That Started With Friendship</p>
+        <h1 className="main-title">Snehuzz & Ayushhh</h1>
+        <p className="subtitle">The Coolest couple In the town</p>
       </div>
 
       <div className="story-section">
@@ -16,9 +57,11 @@ const LandingPage = () => {
         <div className="text-content">
           <h2>From Friends to Forever</h2>
           <p>
-            What began as a beautiful friendship blossomed into something magical. 
-            Through every moment, every laugh, and every tear, we've grown together, 
-            building a bond that's unbreakable.
+            Sneha i know humare bohot jhagde hote hai kabhi mai hurt hojata hu kabhhi tu hurt hojati hai 
+            but i guess this is a part of our relationship and like jhagadne par mujhe kabhi acha feel nahi hua 
+            i always wanted to talk to you, you are my very first girlfriend so i am new to all this and im learning 
+            what makes you feel good what makes you feel bad i promise you i will improve over time and we would not 
+            have any more jhagde i love you.
           </p>
         </div>
       </div>
@@ -27,10 +70,11 @@ const LandingPage = () => {
         <div className="text-content">
           <h2>My Promise to You</h2>
           <p>
-            No matter what life brings, I'll always be by your side. 
-            Your happiness is my happiness, and your smile is my world. 
-            I promise to love you unconditionally, to forgive, to understand, 
-            and to cherish every moment we share together.
+            No matter what life brings, kuchh b hojaye, I'll always be by your side. 
+            jab tu khush hoti hai tabhi mai khus hota hu, and i think mene ye bhot kam baar bola hai 
+            but i really really do like ur smile and idk tu kyu bolti tu achi ni dikhti because i swear yaar 
+            ki tu bhooooot jyaaadaa cute aur hot dikhti i fucking swear it on my life, 
+            I promise to love you unconditionally, to forgive, to understand you and to never give up on you.
           </p>
         </div>
         <div className="image-container">
@@ -40,12 +84,13 @@ const LandingPage = () => {
 
       <div className="quiz-section">
         <h2 className="quiz-title">This is not it meri pyaaariii cutu</h2>
-        <button className="quiz-button">Take Quiz</button>
-        <p className="quiz-hint">Ye quiz lele, there is something better than what you have ever seen</p>
+        <button className="quiz-button" onClick={handleQuizClick}>Take Quiz</button>
+        <p className="quiz-hint">there is something better than what you have seen till now</p>
       </div>
 
       <div className="gallery-section">
-        <h2>Our Journey Together</h2>
+        <h2>Our Gallery</h2>
+        <p className="gallery-note">my bad agar ye photos ache ni lage i swearr i improve everytime you shout at me before taking pics</p>
         <div className="gallery-grid">
           <div className="gallery-item">
             <img src="/src/assets/love3.jpg" alt="Our Memories" />
