@@ -1,6 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
+import love1 from '../assets/love1.jpg';
+import love2 from '../assets/love2.jpg';
+import love3 from '../assets/love3.jpg';
+import love4 from '../assets/love4.jpg';
+import love5 from '../assets/love5.jpg';
+import meetMeHalfway from '../assets/meet-me-halfway.mp3';
 
 const LandingPage = () => {
   const audioRef = useRef(null);
@@ -30,7 +36,7 @@ const LandingPage = () => {
     <div className="landing-container">
       <audio 
         ref={audioRef}
-        src="/src/assets/meet-me-halfway.mp3"
+        src={meetMeHalfway}
         loop
         className="background-music"
       />
@@ -48,7 +54,7 @@ const LandingPage = () => {
 
       <div className="story-section">
         <div className="image-container">
-          <img src="/src/assets/love1.jpg" alt="Our Love Story" className="story-image" />
+          <img src={love1} alt="Our Love Story" className="story-image" />
         </div>
         <div className="text-content">
           <h2>From Friends to Forever</h2>
@@ -74,7 +80,7 @@ const LandingPage = () => {
           </p>
         </div>
         <div className="image-container">
-          <img src="/src/assets/love2.jpg" alt="Our Promise" className="story-image" />
+          <img src={love2} alt="Our Promise" className="story-image" />
         </div>
       </div>
 
@@ -89,13 +95,13 @@ const LandingPage = () => {
         <p className="gallery-note">my bad agar ye photos ache ni lage i swearr i improve everytime you shout at me before taking pics</p>
         <div className="gallery-grid">
           <div className="gallery-item">
-            <img src="/src/assets/love3.jpg" alt="Our Memories" />
+            <img src={love3} alt="Our Memories" />
           </div>
           <div className="gallery-item">
-            <img src="/src/assets/love4.jpg" alt="Our Memories" />
+            <img src={love4} alt="Our Memories" />
           </div>
           <div className="gallery-item">
-            <img src="/src/assets/love5.jpg" alt="Our Memories" />
+            <img src={love5} alt="Our Memories" />
           </div>
         </div>
       </div>

@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './SuccessPage.css';
 import LoveRunner from './LoveRunner';
+import firstDate1 from '../assets/timeline/first-date-1.jpg';
+import firstDate2 from '../assets/timeline/first-date-2.jpg';
+import firstDate3 from '../assets/timeline/first-date-3.jpg';
+import bigEvent1 from '../assets/timeline/big-event-1.jpg';
+import bigEvent2 from '../assets/timeline/big-event-2.jpg';
+import bigEvent3 from '../assets/timeline/big-event-3.jpg';
+import darlingAudio from '../assets/darling.mp3';
+import specialMomentVideo from '../assets/special-moment.mp4';
 
 const SuccessPage = () => {
   const [timeLeft, setTimeLeft] = useState({});
@@ -78,7 +86,7 @@ const SuccessPage = () => {
     <div className="success-container">
       <audio 
         ref={audioRef}
-        src="/src/assets/darling.mp3"
+        src={darlingAudio}
         loop
         className="background-music"
         autoPlay
@@ -112,7 +120,7 @@ const SuccessPage = () => {
         <h2>Here is a gift for my baby</h2>
         <div className="video-container">
           <video controls loop autoPlay>
-            <source src="/src/assets/special-moment.mp4" type="video/mp4" />
+            <source src={specialMomentVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -196,13 +204,13 @@ const SuccessPage = () => {
               <h3>First Date</h3>
               <div className="timeline-gallery">
                 <div className="timeline-image">
-                  <img src="/src/assets/timeline/first-date-1.jpg" alt="First Date" />
+                  <img src={firstDate1} alt="First Date" />
                 </div>
                 <div className="timeline-image">
-                  <img src="/src/assets/timeline/first-date-2.jpg" alt="First Date" />
+                  <img src={firstDate2} alt="First Date" />
                 </div>
                 <div className="timeline-image">
-                  <img src="/src/assets/timeline/first-date-3.jpg" alt="First Date" />
+                  <img src={firstDate3} alt="First Date" />
                 </div>
               </div>
             </div>
@@ -222,13 +230,13 @@ const SuccessPage = () => {
               <h3>First Big Event Together</h3>
               <div className="timeline-gallery">
                 <div className="timeline-image">
-                  <img src="/src/assets/timeline/big-event-1.jpg" alt="Big Event" />
+                  <img src={bigEvent1} alt="Big Event" />
                 </div>
                 <div className="timeline-image">
-                  <img src="/src/assets/timeline/big-event-2.jpg" alt="Big Event" />
+                  <img src={bigEvent2} alt="Big Event" />
                 </div>
                 <div className="timeline-image">
-                  <img src="/src/assets/timeline/big-event-3.jpg" alt="Big Event" />
+                  <img src={bigEvent3} alt="Big Event" />
                 </div>
               </div>
             </div>

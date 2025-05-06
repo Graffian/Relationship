@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Quiz.css';
+import themeImage from '../assets/theme.jpg';
+import dateImage from '../assets/date.jpg';
+import foodImage from '../assets/food.jpg';
+import skinImage from '../assets/skin.jpg';
+import noPole from '../assets/no-pole.mp3';
 
 const Quiz = () => {
   const [answers, setAnswers] = useState({
@@ -109,7 +114,7 @@ const Quiz = () => {
     <div className="quiz-container">
       <audio 
         ref={audioRef}
-        src="/src/assets/no-pole.mp3"
+        src={noPole}
         loop
         className="background-music"
         autoPlay
@@ -143,7 +148,7 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src="/src/assets/theme.jpg" alt="Our Theme" className="quiz-image" />
+          <img src={themeImage} alt="Our Theme" className="quiz-image" />
         </div>
       </div>
 
@@ -167,7 +172,7 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src="/src/assets/date.jpg" alt="Our First Date" className="quiz-image" />
+          <img src={dateImage} alt="Our First Date" className="quiz-image" />
         </div>
       </div>
 
@@ -191,7 +196,7 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src="/src/assets/food.jpg" alt="Our Food Adventures" className="quiz-image" />
+          <img src={foodImage} alt="Our Food Adventures" className="quiz-image" />
         </div>
       </div>
 
@@ -213,7 +218,7 @@ const Quiz = () => {
           )}
         </div>
         <div className="image-section">
-          <img src="/src/assets/skin.jpg" alt="Skin Color" className="quiz-image" />
+          <img src={skinImage} alt="Skin Color" className="quiz-image" />
         </div>
       </div>
 
