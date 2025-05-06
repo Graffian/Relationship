@@ -42,7 +42,7 @@ const LandingPage = () => {
       </div>
 
       <div className="hero-section">
-        <h1 className="main-title">Snehuzz & Ayushhh</h1>
+        <h1 className="main-title">Snehaaaaa & Ayushhh</h1>
         <p className="subtitle">The Coolest couple In the town</p>
       </div>
 
